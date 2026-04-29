@@ -2,6 +2,7 @@ package com.socialChef.SocialChef.Controller;
 
 import com.socialChef.SocialChef.Service.RecipeService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +15,9 @@ public class RecipeController {
         RecipeService = recipeService;
     }
 
-    @PostMapping("/recipes/parse-recipe")
-    void ParseRecipeFrom(String recipeFromPostUrl){
-
+    @PostMapping("/parse-recipe")
+    void ParseRecipeFrom(@RequestBody String recipeFromPostUrl){
+        String recipeLink = recipeFromPostUrl;
+        System.out.println(recipeLink);
     }
 }
